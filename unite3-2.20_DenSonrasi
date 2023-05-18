@@ -1,0 +1,45 @@
+const colors =require("colors");
+const Passanger = require("./passanger");
+const Driver = require("./driver");
+const { passangerDataBase, driverDataBase } = require("./database")
+
+// const armagan =  Passanger.create({name:"Armagan", location:"Kreuzberg"})
+// const mert = Passanger.create({name:"Mert",location:"Mitte"})
+// const stefan = Driver.create({name:"Stefan", location:"Towerdown Park"})//burada sadece "Stefan yazabilir aslında"
+// driverDataBase.save([stefan]); 
+
+// armagan.book(stefan,"Kreuzberg","NeuKöln")
+// armagan.book(stefan,"NeuKöln","Mitte")
+// armagan.book(stefan,"Mitte","Kreuzberg")
+// armagan.book(stefan,"Kreuzberg","SXF")
+// mert.book(stefan,"Mitte","Kreuzberg")
+
+function printBooking(booking) {
+    console.log(`${colors.yellow(booking.passanger.name)} booked ${colors.red(booking.driver.name)} travel from ${colors.blue(booking.origin)} to ${colors.yellow(booking.destination)}` )
+}
+
+function printBookingHistory(passanger) {
+    if(passanger.bookings.length == 0)
+    return console.log(`${colors.yellow(passanger.name)} has no booking yet`)
+
+    passanger.bookings.forEach(printBooking)
+}
+
+//  passangerDataBase.save([armagan,mert])
+ const passangers = passangerDataBase.load()
+ passangers.forEach(printBookingHistory)
+
+// console.log(passangerDataBase.findBy("location","Mitte"))
+
+// const betul = new Passanger("Betul","Tegel")
+
+// db.insert("passangers",betul)
+// db.remove("passangers",2)
+// const armagan = passangerDataBase.findByName("Armagan")   
+   
+//    armagan.book(stefan,"Obersee","Bielefeld")
+//    passangerDataBase.update(armagan);
+//    printBookingHistory(armagan)
+   
+
+// passangers.forEach(p=> console.log(p.name))

@@ -26,3 +26,6 @@ package.json kismında nodemone --ignore *.json yazıyoruz sonsuz döngüden ç�
 
 npm i flatted ile flatted yüklüyoruz. const flatted =require("flatted) ile tanımlıyoruz
 JSON ları flatted ile değiştiriyoruz.
+-önce kendi database imizi oluşturuyoruz.save,load,insert,remove,findbyName ve
+armagan.book dediğimiz zaman armagan nın artık sınıf değil obje olduğunu
+görüyoruz. onun için her Sınfı için database oluşturuyoruz

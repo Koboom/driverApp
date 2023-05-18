@@ -11,7 +11,11 @@
   "author": "M.Yüksel Koyunoglu <nykoyunoglu@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "colors": "^1.4.0",
-    "flatted": "^3.2.7"
+    "express": "^4.18.2",
+    "flatted": "^3.2.7",
+    "pug": "^3.0.2",
+    "uuid": "^9.0.0"
   }
 }

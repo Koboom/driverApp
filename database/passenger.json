@@ -1,0 +1,96 @@
+[[
+  "1",
+  "2",
+  "3"
+],{
+  "id": "4",
+  "name": "5",
+  "location": "6",
+  "bookings": "7"
+},{
+  "id": "8",
+  "name": "9",
+  "location": "10",
+  "bookings": "11"
+},{
+  "id": "12",
+  "name": "13",
+  "location": "14",
+  "bookings": "15"
+},"c42cb0e2-215b-42e8-bca9-e65ec2f6b297","Armagan","Kreuzberg",[
+  "16",
+  "17",
+  "18",
+  "19"
+],"941e8292-34fc-4509-b0b9-705d4a10511f","Mert","Berlin",[
+  "20",
+  "21"
+],"c7afa284-4388-436e-bfef-6031693227eb","Betul","Tegel",[
+  "22"
+],{
+  "driver": "23",
+  "passenger": "24",
+  "origin": "6",
+  "destination": "25"
+},{
+  "driver": "23",
+  "passenger": "24",
+  "origin": "25",
+  "destination": "26"
+},{
+  "driver": "23",
+  "passenger": "24",
+  "origin": "26",
+  "destination": "6"
+},{
+  "driver": "23",
+  "passenger": "24",
+  "origin": "6",
+  "destination": "27"
+},{
+  "driver": "28",
+  "passenger": "29",
+  "origin": "10",
+  "destination": "30"
+},{
+  "driver": "31",
+  "passenger": "32",
+  "origin": "27",
+  "destination": "6"
+},{
+  "driver": "33",
+  "passenger": "3",
+  "origin": "27",
+  "destination": "6"
+},{
+  "id": "34",
+  "name": "35",
+  "location": "36"
+},{
+  "id": "4",
+  "name": "5",
+  "location": "6",
+  "bookings": "7"
+},"Neuköln","Mitte","SXF",{
+  "id": "34",
+  "name": "35",
+  "location": "36"
+},{
+  "id": "8",
+  "name": "9",
+  "location": "10",
+  "bookings": "11"
+},"Düsseldorf",{
+  "id": "34",
+  "name": "35",
+  "location": "36"
+},{
+  "id": "8",
+  "name": "9",
+  "location": "10",
+  "bookings": "11"
+},{
+  "id": "34",
+  "name": "35",
+  "location": "36"
+},"88819fd0-6f95-4ee1-9942-e3de35013661","Stefan","Troptower Park"]
