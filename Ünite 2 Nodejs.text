@@ -1,0 +1,61 @@
+Node.js
+
+	Tarihi:
+
+	-JavaScript 1995 yılında ilk çıktığında browser için çıktı ama bunu server side prog. için 
+5-6 ay sonra backend kısmında da çıkardılar. bu açıdan bakıldığı zaman Node.js lik backend dil-
+lerinden birisi. o zamanlar böyle asynron programlama yok. netcape(mozilla'nın eski versiyonu)
+de node.js php4 e benzeyen bir yapıda yapılıyordu serverside da. aslında enterprice da dinamik
+uygulamalar geliştirmek için çıkartıldı. netcape in iddiası buydu javaScript i pazarlarken. ama 
+çoğu insan javaScript ile uygulama mı yapılır diyordu. ama 2011/12 yılında çok büyük bir devrim 
+oldu çünkü netcape browser öldüğü zamandan sonra 10 yıl kadar javaScript in backend olduğu uzun 
+zaman unutuldu. Mozilla ismini aldıktan sonra hala orada kalan insanlar raino engine firefox un 
+javascript engine sini import edip backend işlerini yapmaya başladılar. Rein Dall diye birisi ben
+Chome un V8 engine aldım bunu kullanacağım backend de. bununla beraber uygulamalar yapacağız çün-
+kü asynron,numbeworking,eventpreven ... programlamaya ihtiyacımız var diye ortaya çıktı. inanıl-
+maz büyük başarılı bir işti. 
+
+sınıfları kullanmasaydık eğer;
+
+const armagan {
+	name:"armagan",
+	location:"Bielefeld"
+}
+const mert {
+	name:"mert",
+	location:"Dortmund"
+}
+bunlar objeler için bir garanti yok. gözle yolcu olduklarını görebiliyoruz ama bir developer
+yarın bir gün const armagan içine metod ekleyebilir
+const armagan {
+	name:"armagan",
+	location:"Bielefeld"
+	printHistory(printBooking)
+}
+eklemek isteyebilir ama mert de olmayabilir. yani bütün yolcular için aynı kod eşitliği için sınıf kullanmak daha 
+mantıklı.
+aynı mantık functionel programlama içinde geçerli.
+
+function createPassanger(name,location) {
+	return {
+		name,
+		location,
+		bookings:[],
+		printHistory(){
+			this.bookings.foreach(printBooking);
+		}
+	}
+}
+const armagan = createPassanger("armagan","Bielefeld"); 
+
+ama bu güzel bir yöntem değil bu sadece function yaratmak objeler yaratmak için.buna gerek yok bunun için Class var.
+functionlar iş yapmak. görevi objeler yaratmak olabilir ama uygulamanın ana elamanlarını yaratmak çakmakla kazanı kaynatmaya
+çalışmak gibidir. yanı sınıf kullanmak daha iyidir semantik olarak.
+
+
+
+kodlar:
+
+cd week-2
+node index.js
+npm init  ile package.json dosyasını oluşturuyoruz.

@@ -1,0 +1,28 @@
+#burada kendi veri tabanımızı yapacagız
+-veri tabanının kaydedebiliyor ve okuyabiliyor olması lazım.
+module.exports = { save, load } diye iki modul tanımlıyoruz. kayıt ve yükle
+index.js içine const db =require("./database"); diyoruz
+
+db.save("passangers",[armagan]); önce kaydediyoruz
+db.save("drivers",[stefan]);
+const passangers =db.load("passangers"); sonra bir değişkene atayıp
+passangers.forEach(printBooking);//armaganın bütün book larının çıktısını istiyoruz.
+çalıştırdığımız zaman patlıyor çünkü fonksiyonlarını oluşturmadık. save ve load için
+
+const save = (filename, objects) => { açıklaması -
+}
+db.save("passangers",[armagan]); -burada: filename:passangers, objects:armagan oluyor
+dosya işlemleri yapmak için "fs" i require ediyoruz database içinde bu hazır bir kütüplane
+nmp fs i internetten okuyabiliyoruz. Güzel dokumentasyonları var.
+
+const save =(filename, objects) => {//2
+    fs.writeFileSync(`./${filename}.json`,JSON.stringify(objects,null,2))//5
+    null,2 ile temiz ve düzenli bir hal alıyor
+} yazdığımız zaman yeni bir JSON dosyası oluyor ve 
+index.js içinde tanımladığımız
+// db.save("passangers",[{name:"Armagan", location: "Bielefeld"}]);
+içindeki bilgileri json haline getiriyor. ve yaptığımız kayıtlar json haline dönüyor.
+package.json kismında nodemone --ignore *.json yazıyoruz sonsuz döngüden çıkıyor
+
+npm i flatted ile flatted yüklüyoruz. const flatted =require("flatted) ile tanımlıyoruz
+JSON ları flatted ile değiştiriyoruz.
