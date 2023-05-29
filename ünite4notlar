@@ -1,0 +1,16 @@
+// passenger.book(driver,"SXF","Kreuzberg" ilk hali böyleydi aşağıdaki gibi yaptık
+    //axios.post
+    //("/passengers/c7afa284-4388-436e-bfef-6031693227eb/bookings?driverId=88819fd0-6f95-4ee1-9942-e3de35013661&origin=Kreuzberg&destination=TXL")
+    //    .then(res => res.data).then(console.log).catch(console.log) bu kısmı browser console kısmına yazıp enter yaptığımız zaman
+    //yeni bir yolculuk ekliyor
+    //const driver = await driverDataBase.find(req.query.driverId)//query ile çalışıyor
+    //axios.post("/passengers/c7afa284-4388-436e-bfef-6031693227eb/bookings", {driverId:"88819fd0-6f95-4ee1-9942-e3de35013661", origin: "TXL", destination: "Mitte"}).then(res => res.data).then(console.log).catch(console.log)
+    //yada bu yeni bir yolculuk ekliyor. bu tam rest api mi değilmi diye tartışmalar varmış. oyüzden restfull deniyormuş. rest gibi api demek
+    //bunun çalışması için 
+    //const driver = await driverDataBase.find(req.query.driverId)//söforü bul   burası qure
+    // passenger.book(driver,req.query.origin,req.query.destination)//book yap 3.17 den itibaren açıklanıyor
+    //query veya body ile gönderilebiliyor. seçim yapmak gerekiyor ikiside aynı hangisi kolayıma geliyorsa onu kullanmalıyım
+
+    // "Yakırda yazdiklarım çok önemli console log üzerindeki yolcu ekleme işlemi yapıldı ve çok iyi çalışıyor iki değişik 
+    // şansım var. zamanı geldiği zaman bunu kullanmak istiyorum
+    

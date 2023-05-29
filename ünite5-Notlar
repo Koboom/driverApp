@@ -1,0 +1,5 @@
+//bu ünitede view içine her obje için pug dosyaları oluşturduk. pug dosyaları index in başka bir formatı haca özellikle 
+//tavsiye ediyor. Hem kullanması kolay hem de daha kısa kodlar yazıyoruz ama benim için vsCode index daha iyi geldi çünkü 
+// kod yazarken tanıyor VsCode. pug da diğer sayfardan atama yaptık ve çok da güzel göründü.Sonra routes diye bir dosya açtık ve
+//database için yazdığımız bütün kodları kendi isimlerine göre ayırdık ve index.js i rahatlattık. burada ilk kez body-parser ile 
+// tanımmış oldum. Özet olarak database i her defasında adım adım dbMongo ya yaklaşacak şekilde kodlarımızı revize ettik

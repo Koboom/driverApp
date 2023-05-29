@@ -1,53 +1,19 @@
 const express = require("express")
-const { passengerDataBase, driverDataBase } = require("./database")
-const Passenger = require("./models/passenger")//create yapabilmek için 
-const flatted = require("flatted")//json flatten şeklinde olduğu için çağırıyoruz
-const pug = require("pug")
 const bodyParser = require('body-parser') // create yapabilmek için , insert yapabilmek için
+const passengersRouter =require("./routes/passengers")// yeni açtığımız js si buraya tanımlıyoruz
+const indexRouter = require("./routes/index")
+require("./mongo-connection")
 
 const app = express()
-app.use(bodyParser.json())//
+app.use(bodyParser.json())//kullanılan dosya json olmalı
 
 app.set("view engine","pug")//pug dan bütün bilgileri alıyoruz
-
-app.get("/",(req, res) => {//anasayfa yada anasayfa modelleri buradan ilerliyor
-    res.render("index")
-})
-
-app.get("/passengers",async (req,res) => {//passengers sayfasının içine bütün bilgileri çağırıyoruz
-    const passengers = await passengerDataBase.load()
-    // res.send(flatted.stringify(passengers))
-    res.render("passengers", {passengers})
-})
-
-app.post("/passengers",async (req,res) =>{//passenger içine ekleme yapabilmek için önce yaratıyoruz ve ekliyoruz
-    const passenger = Passenger.create(req.body)//bunun için bodyParser gerekiyor
-    await passengerDataBase.insert(passenger) 
-    
-    res.send(passenger)
-})
-
-app.delete("/passenegers/:passengersId", async(req,res) => {//
-    await passengerDataBase.removeBy("id", req.params.passengersId) //çağırma ile aynı yöntemi uyguluyoruz
-
-    res.send("ok")
-})
-
-app.get("/passengers/:passengerId",async (req,res) => {//id ile çağırıyoruz 
-    const passenger = await passengerDataBase.find(req.params.passengerId)//bu özel format ezberlemek lazıSm
-    if(!passenger) return res.status("404").send("Cannot find id")//
-    res.render("passenger",{passenger})
-})
-// /passengers/:passengerId/bookings sıralamasını axios da da yapıyoruz. yeni book eklemek için kullanıyoruz
-app.post("/passengers/:passengerId/bookings",async (req, res) => {
-    const passenger = await passengerDataBase.find(req.params.passengerId)//yolcuyu bul
-    const driver = await driverDataBase.find(req.query.driverId)//söforü bul
-
-    passenger.book(driver,"SXF","Kreuzberg")//book yap
-    await passengerDataBase.update(passenger)//güncelle
-    res.send(flatted.stringify(passenger))//yazdir ama bu 
-})
+app.use("/passengers",passengersRouter)// passengers ile başlayan bütün routes lar PassengersRouter içine gitsin ve kullan(* olanlara bak)
+//* yazan yere not: yukarıdaki kod passengers lerin hepsini kaldırabildiğimiz anlamın geliyor.
+//Not: yeni versiyon çıkardığımız zaman /passengers-V2 diyebiliriz ve diger sayfadaki bütün bilgileri değiştirmeye gerek kalmıyor.
+app.use("/",indexRouter)
 
 app.listen(3000, () => {// okunacak localhost sayfası
     console.log("started listening on 3000")
 })
+// index.js i passengers olarak routes dosyası altına kaydettik
